@@ -414,3 +414,20 @@ before merging to production:
 7. UI work passed `impeccable` `audit` or `polish` (or equivalent manual checklist).
 8. Non-trivial features went through self-review (`ce-code-review` or equivalent).
 9. Anything skipped or deviating from this file is called out explicitly.
+
+## Cursor — skill discovery
+
+Skills in this library are synced into Cursor so agents can load them by name.
+
+```bash
+./scripts/sync-cursor-skills.sh --scope both --force
+```
+
+- **Project:** `.cursor/skills/<name>/` → symlinks to canonical sources in `front-end/` and `back-end/`
+- **Global (all Cursor projects):** `~/.cursor/skills/<name>/`
+- **Rules:** `.cursor/rules/skills-library.mdc` (always apply in this repo)
+- **Agent instructions:** `AGENTS.md` points here
+
+Re-run sync after adding or updating vendored skills. Reload Cursor after syncing.
+When a skill covers the task, read its `SKILL.md` from `.cursor/skills/<name>/` or the
+library path in the routing table above — do not rely on memory.

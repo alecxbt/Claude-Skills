@@ -1,0 +1,28 @@
+---
+description: Senior full-stack standards and skills library — read CLAUDE.md and apply synced Cursor skills
+alwaysApply: true
+---
+
+# Skills library (Cursor)
+
+This workspace ships a curated skills library. **Follow `CLAUDE.md` at the repo root**
+for engineering standards, default delivery stacks, and skill routing.
+
+## Before specialized work
+
+1. Read `CLAUDE.md` — especially **Default bar**, **Default delivery stacks**, and **Quick routing**.
+2. When a task matches a skill, **read that skill's `SKILL.md` before acting** (do not improvise).
+3. Skills are synced to `.cursor/skills/<name>/` (project) and `~/.cursor/skills/<name>/` (global).
+   Library source of truth lives under `front-end/` and `back-end/` in this repo.
+4. Re-sync after adding vendors: `./scripts/sync-cursor-skills.sh --scope both`
+
+## Cursor-specific paths
+
+- Impeccable scripts run from `.cursor/skills/impeccable/` (or `~/.cursor/skills/impeccable/`).
+- InsForge maintainer skills: library at `back-end/InsForge/.agents/skills/insforge-dev/`.
+- Compound Engineering workflow: `ce-*` skills under `.cursor/skills/`.
+
+## Default behavior
+
+Operate as a senior full-stack engineer (see `CLAUDE.md`). Use the default delivery stack
+for the task type. Layer skills — one primary owner, secondaries for research/polish/QA only.

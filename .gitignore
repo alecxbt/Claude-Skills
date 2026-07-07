@@ -1,0 +1,4 @@
+.DS_Store
+
+# Cursor skill symlinks are generated locally — run scripts/sync-cursor-skills.sh
+.cursor/skills/
