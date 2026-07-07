@@ -4,12 +4,17 @@ These are defaults for every project. A project-level CLAUDE.md/AGENTS.md overri
 this file. Apply defaults without asking; if a task forces a deviation, say so
 explicitly and explain why in one sentence. Never leave a deviation silent.
 
-## Website design & frontend — use the skills library
+## Skills library — consult before specialized work
 
-- A curated skills library lives at `~/Desktop/claudeskills`. **Consult it before
-  any and all website design or frontend work** — read the relevant `SKILL.md`
-  files and follow them; do not design from scratch on instinct.
-- What's there (under `front-end/`):
+- A curated skills library lives at `~/Desktop/Claude-Skills`. **Consult it
+  before website design, frontend polish, InsForge platform work, or InsForge
+  app integration** — read the relevant `SKILL.md` files and follow them; do not
+  improvise from instinct when a skill covers the task.
+
+### Frontend (`front-end/`)
+
+- **Consult before any website design or frontend work.**
+- What's there:
   - `leonxinx/taste-skill/skills/` — design taste and direction: `taste-skill`,
     `minimalist-skill`, `brutalist-skill`, `soft-skill`, `brandkit`,
     `redesign-skill`, `image-to-code-skill`, `stitch-skill`, image-gen skills
@@ -24,6 +29,32 @@ explicitly and explain why in one sentence. Never leave a deviation silent.
   HTML, keyboard-accessible and WCAG AA contrast, responsive from 360px up,
   real fonts loaded via `@fontsource`, no layout shift on load, and verify the
   result in a real browser (screenshot) before calling it done.
+
+### Backend — InsForge (`back-end/InsForge/`)
+
+- **Vendored copy of [InsForge/InsForge](https://github.com/InsForge/InsForge)** —
+  open-source backend platform for agentic coding (database, auth, storage,
+  edge functions, realtime, AI gateway, deployment).
+- Maintainer skills — canonical source is `.agents/skills/insforge-dev/` (mirrored
+  to `.claude/skills/` and `.codex/skills/`; edit only `.agents/` then run
+  `scripts/sync-skills.sh`):
+  - `insforge-dev` — entry point for contributing to the InsForge monorepo.
+  - `backend` — API routes, services, providers, auth, database, schedules.
+  - `dashboard` — shared dashboard package (`packages/dashboard/`).
+  - `ui` — reusable design-system primitives (`packages/ui/`).
+  - `shared-schemas` — cross-package Zod contracts and exported types.
+  - `docs` — product docs, agent docs, SDK guides, OpenAPI specs.
+  - `e2e-testing` — deterministic E2E gate before opening or updating an
+    InsForge OSS PR.
+- `doc-author` (`.claude/skills/doc-author/`) — writing and maintaining InsForge
+  MDX docs; InsForge-specific overrides live in `doc-author/INSFORGE.md`.
+- Agent reference docs (`.agents/docs/`) — use when building apps **on** InsForge
+  as BaaS (not when editing the platform itself): `insforge-instructions-sdk.md`,
+  `deployment.md`, `real-time.md`, `payments.md` (+ Stripe/Razorpay variants).
+- Selection rule: contributing to InsForge itself → start with `insforge-dev`,
+  then the narrowest child skill; writing InsForge docs → `doc-author`; integrating
+  InsForge SDK/MCP in an app → `.agents/docs/`; opening an InsForge PR →
+  `e2e-testing`.
 
 ## Hosting — Cloudflare first
 
