@@ -7,9 +7,9 @@ explicitly and explain why in one sentence. Never leave a deviation silent.
 ## Skills library — consult before specialized work
 
 - A curated skills library lives at `~/Desktop/Claude-Skills`. **Consult it
-  before website design, frontend polish, InsForge platform work, or InsForge
-  app integration** — read the relevant `SKILL.md` files and follow them; do not
-  improvise from instinct when a skill covers the task.
+  before website design, frontend polish, backend platform work, agent workflow
+  optimization, or InsForge integration** — read the relevant `SKILL.md` files
+  and follow them; do not improvise from instinct when a skill covers the task.
 
 ### Frontend (`front-end/`)
 
@@ -22,15 +22,27 @@ explicitly and explain why in one sentence. Never leave a deviation silent.
   - `emilkowalski/skills/` — motion and polish: `animation-vocabulary`,
     `emil-design-eng`, `review-animations`.
   - `pbakaus/impeccable/` — frontend-quality skills, agents, and hooks.
+  - `ui-ux-pro-max-skill/.claude/skills/` — UI/UX design intelligence:
+    `ui-ux-pro-max`, `design`, `banner-design`, `ui-styling`, `brand`.
+  - `ui/skills/` — shadcn/ui component work: `shadcn`, `migrate-radix-to-base`.
+  - `webgpu-claude-skill/skills/` — WebGPU + Three.js TSL: `webgpu-threejs-tsl`.
+  - `awesome-design-md/` — curated `DESIGN.md` references for design-language
+    consistency (not a skill — copy a reference into the project).
+  - `npxskillui/` — CLI to reverse-engineer a site's design system into a
+    Claude-ready skill (generator tool, not a skill itself).
 - Selection rule: pick the skill matching the task (new design → a taste/style
-  skill; restyling → `redesign-skill`; animation work → Emil's skills; quality
-  pass → impeccable). When in doubt, start with `taste-skill`.
+  skill; restyling → `redesign-skill`; animation work → Emil's skills; shadcn
+  components → `ui/skills/shadcn`; broad UI/UX planning → `ui-ux-pro-max`;
+  WebGPU/Three.js → `webgpu-threejs-tsl`; quality pass → impeccable). When in
+  doubt, start with `taste-skill`.
 - Frontend baseline regardless of skill: React + Vite + TypeScript, semantic
   HTML, keyboard-accessible and WCAG AA contrast, responsive from 360px up,
   real fonts loaded via `@fontsource`, no layout shift on load, and verify the
   result in a real browser (screenshot) before calling it done.
 
-### Backend — InsForge (`back-end/InsForge/`)
+### Backend (`back-end/`)
+
+#### InsForge (`back-end/InsForge/`)
 
 - **Vendored copy of [InsForge/InsForge](https://github.com/InsForge/InsForge)** —
   open-source backend platform for agentic coding (database, auth, storage,
@@ -55,6 +67,24 @@ explicitly and explain why in one sentence. Never leave a deviation silent.
   then the narrowest child skill; writing InsForge docs → `doc-author`; integrating
   InsForge SDK/MCP in an app → `.agents/docs/`; opening an InsForge PR →
   `e2e-testing`.
+
+#### Caveman (`back-end/caveman/`)
+
+- Token-efficient agent communication and context compression.
+- Skills under `plugins/caveman/skills/` and `skills/`: `caveman`,
+  `caveman-compress`, `cavecrew`, `caveman-stats`, `caveman-help`.
+- Selection rule: user asks for brevity, token savings, or "caveman mode" →
+  `caveman`; context compression workflows → `caveman-compress` or `cavecrew`.
+
+#### Compound Engineering (`back-end/compound-engineering-plugin/`)
+
+- Workflow plugin for compounding engineering knowledge and agent-assisted dev
+  loops. Skills under `skills/` prefixed `ce-`: `ce-compound`, `ce-work`,
+  `ce-code-review`, `ce-commit`, `ce-brainstorm`, `ce-strategy`, `ce-setup`,
+  `ce-worktree`, `ce-resolve-pr-feedback`, and others.
+- Selection rule: capturing solved problems → `ce-compound`; structured work
+  sessions → `ce-work`; PR/review loops → `ce-code-review` or
+  `ce-resolve-pr-feedback`; repo setup → `ce-setup`.
 
 ## Hosting — Cloudflare first
 
