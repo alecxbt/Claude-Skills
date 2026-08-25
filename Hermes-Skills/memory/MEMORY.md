@@ -1,0 +1,11 @@
+Claude-Skills library at C:\Users\Alec\Desktop\Claude-Skills is the engineering standards basis for all Refractor work. CLAUDE.md: staff-grade bar, production by default, Cloudflare-first hosting, Supabase/Prisma DB, trunk-based git, CI on every push. Sections: front-end/ (taste-skill, impeccable 23 cmds, ui-ux-pro-max, webgpu, shadcn, emil-design-eng, awesome-design-md) and back-end/ (InsForge BaaS, compound-engineering ce-plan->ce-work->ce-code-review->ce-compound, caveman comms).
+§
+Obsidian vault: C:\Users\Alec\Documents\GitHub\solstatus\Obsidian. Brain folder is primary workspace. New Daily Recap page each day. Project Tracker is a living doc — append only. Decision notes in Decisions/. Brain backed up to private repo github.com/alecxbt/refractor-brain. SolStatus repo is archived/read-only.
+§
+MCP servers (8 total): github (26 tools, PAT-based stdio), cloudflare (OAuth), supabase (OAuth), context7 (no auth, lib docs), twelve-data (API key needed), sentry (OAuth), deepwiki (no auth, repo Q&A), wolfram (App ID needed).
+§
+Google Workspace OAuth authenticated. Alec's Gmail: wilsonalec13@gmail.com (secondary, not primary). Full access: Gmail, Calendar, Drive, Sheets, Docs, Contacts + gmail.settings.basic (filter management). Token auto-refreshs at ~/.hermes/google_token.json. API via google_api.py script.
+
+Gmail inbox professionally cleaned (Aug 2026): 50,000+ junk emails trashed, inbox zero achieved. 40 active filters routing emails to labeled folders: LinkedIn (auto-read), Travel/Airlines, Newsletters (auto-read), Finance/{Brokerage,Crypto,Banking}, Accounts & Security, Shopping (auto-read). Category catch-alls (Promotions/Social/Forums) auto-archived. Known spam senders auto-trashed (social media, marketing, dating spam). Alec can request filter updates anytime.
+§
+Telegram bot live. Bot token & allowed user (1341154056) in .env. Gateway installed as Windows Startup item, running as background process. Hermes reachable from Alec's phone via Telegram — full tool access, voice, files, streaming. Gateway logs at ~/.hermes/logs/gateway.log.

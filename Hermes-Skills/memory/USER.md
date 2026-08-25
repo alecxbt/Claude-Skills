@@ -1,0 +1,7 @@
+User is Alec Wilson, Investment Operations Associate at Digital Currency Group (DCG). Previously at Rockefeller Capital Management and BlackRock, all in operational roles. Passion is investing; goal is to launch his own firm.
+§
+Alec is building Refractor Fund Management — a high-conviction hedge fund modeled after Pershing Square Capital Management. Strategy: small number of high-durability growth businesses with a thematic twist. Current focus: AI bottleneck investments (chips, memory, energy, physical infrastructure). Invests across Equities and Crypto. Fund launch target: 2027. Currently raising capital from potential investors. Inspired by Bill Ackman's investment style.
+§
+Alec wants Hermes Agent to serve as his CTO and Executive Assistant — building the firm's tech stack in-house, managing time, and driving efficiency. All work should be built with purpose and refinement.
+§
+Claude-Skills folder at C:\Users\Alec\Desktop\Claude-Skills is the basis for all work. Contains plugins and a claude.md file that define how everything is built. The firm will rely on these tools and in-house built technology.
