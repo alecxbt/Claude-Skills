@@ -1,4 +1,4 @@
-User is Alec Wilson, Investment Operations Associate at Digital Currency Group (DCG). Previously at Rockefeller Capital Management and BlackRock, all in operational roles. Passion is investing; goal is to launch his own firm.
+User works full-time at Digital Currency Group (DCG) and relies on Hermes as CTO/EA for building Refractor Fund Management. Expects proactive tracking of action items in Project Tracker, automated backups (GitHub syncs on Wednesdays), and zero-clutter communications. Prefers updating single living documents over creating redundant fragmented notes.
 §
 Alec is building Refractor Fund Management — a high-conviction hedge fund modeled after Pershing Square Capital Management. Strategy: small number of high-durability growth businesses with a thematic twist. Current focus: AI bottleneck investments (chips, memory, energy, physical infrastructure). Invests across Equities and Crypto. Fund launch target: 2027. Currently raising capital from potential investors. Inspired by Bill Ackman's investment style.
 §

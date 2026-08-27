@@ -31,6 +31,7 @@ Bulk Gmail operations that go beyond single-message commands: trashing/archiving
 ## References
 
 - `references/gmail-bulk-operations.md` — the full technique guide: bulk trash/archive with batchModify, pagination via nextPageToken, filter creation via the Gmail API, the restricted label color palette, and the scope upgrade procedure. Load it before performing any bulk operation.
+- `templates/professional-filter-setup.py` — copy-and-customize script for creating a complete label + filter system. Edit the LABELS and FILTERS config dicts at the top and run.
 
 ## Procedure
 
@@ -71,7 +72,17 @@ Use `users().settings().filters().create()`. Each filter has:
 - `action.addLabelIds` — labels to apply
 - `action.removeLabelIds` — labels to remove (e.g. `["INBOX", "UNREAD"]` to skip inbox and mark read)
 
-### 5. Verify
+### 5. Archive old Primary emails
+
+After trashing categories, the Primary inbox may still contain hundreds of old, no-longer-actionable emails (job applications, old work correspondence, service notifications). Archive everything older than a threshold (typically 30 days) to achieve true inbox zero:
+
+```
+in:inbox older_than:30d -category:promotions -category:social -category:forums -category:updates
+```
+
+Use `batch_archive` (remove INBOX + UNREAD, no TRASH). These emails stay searchable but out of the inbox.
+
+### 6. Verify
 
 After bulk operations, verify the inbox is clean:
 ```
@@ -97,3 +108,5 @@ service.users().settings().filters().list(userId="me").execute()
 - **CLI wrapper too slow for bulk**: The `google_api.py` CLI wrapper makes one HTTP call per message for metadata. For 50,000+ messages, write a direct API script using `googleapiclient` instead.
 - **Empty search results break JSON parsing**: When a category is fully trashed, the CLI wrapper may return empty output that fails `json.loads`. Handle this gracefully — empty output means success.
 - **Duplicate filters**: No built-in dedup. Check existing filters with `.list()` before creating.
+- **`setup.py --auth-url` flag limitations**: The setup script may not accept `--services` or `--format json` flags — it only takes `--auth-url` alone. If you need to pass custom scopes, edit the SCOPES list in `setup.py` directly before running `--auth-url`.
+- **Existing filters may auto-apply to old emails**: After creating filters that match sender domains, Gmail may immediately apply them to existing emails in the inbox, removing them from inbox before you get a chance to manually trash them. This is normal — check inbox again after filter creation to see what remains.

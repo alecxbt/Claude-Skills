@@ -4,8 +4,8 @@ Obsidian vault: C:\Users\Alec\Documents\GitHub\solstatus\Obsidian. Brain folder 
 §
 MCP servers (8 total): github (26 tools, PAT-based stdio), cloudflare (OAuth), supabase (OAuth), context7 (no auth, lib docs), twelve-data (API key needed), sentry (OAuth), deepwiki (no auth, repo Q&A), wolfram (App ID needed).
 §
-Google Workspace OAuth authenticated. Alec's Gmail: wilsonalec13@gmail.com (secondary, not primary). Full access: Gmail, Calendar, Drive, Sheets, Docs, Contacts + gmail.settings.basic (filter management). Token auto-refreshs at ~/.hermes/google_token.json. API via google_api.py script.
-
-Gmail inbox professionally cleaned (Aug 2026): 50,000+ junk emails trashed, inbox zero achieved. 40 active filters routing emails to labeled folders: LinkedIn (auto-read), Travel/Airlines, Newsletters (auto-read), Finance/{Brokerage,Crypto,Banking}, Accounts & Security, Shopping (auto-read). Category catch-alls (Promotions/Social/Forums) auto-archived. Known spam senders auto-trashed (social media, marketing, dating spam). Alec can request filter updates anytime.
+Gmail cleaned (Aug 2026): inbox zero, 40 filters to labeled folders (auto-read: LinkedIn/Travel/Newsletters/Finance/Banking, Shopping; catch-alls archived; spam trashed).
 §
 Telegram bot live. Bot token & allowed user (1341154056) in .env. Gateway installed as Windows Startup item, running as background process. Hermes reachable from Alec's phone via Telegram — full tool access, voice, files, streaming. Gateway logs at ~/.hermes/logs/gateway.log.
+§
+Weekly IBKR report IN PRODUCTION at C:\Users\Alec\portfolio-reporting (run_weekly.py: Flex Web Service read-only → parse → render → AgentMail from personalreporting@agentmail.to → alecxbt@outlook.com). Cron 'Weekly IBKR Portfolio Report' (307541c58486) Fri 17:00 Eastern auto-fires (follows DST). Acct U26923648. Weekly = IBKR live TWR (perf query 1616495, cached fallback); since-inception dropped (ambiguous). Holdings unrealized $ + %. Capital Movements + exposure pie. Archives to data\reports\.
