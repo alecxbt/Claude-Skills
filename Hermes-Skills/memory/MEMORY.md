@@ -2,10 +2,12 @@ Claude-Skills library at C:\Users\Alec\Desktop\Claude-Skills is the engineering 
 §
 Obsidian vault: C:\Users\Alec\Documents\GitHub\solstatus\Obsidian. Brain folder is primary workspace. New Daily Recap page each day. Project Tracker is a living doc — append only. Decision notes in Decisions/. Brain backed up to private repo github.com/alecxbt/refractor-brain. SolStatus repo is archived/read-only.
 §
-MCP servers (8 total): github (26 tools, PAT-based stdio), cloudflare (OAuth), supabase (OAuth), context7 (no auth, lib docs), twelve-data (API key needed), sentry (OAuth), deepwiki (no auth, repo Q&A), wolfram (App ID needed).
+MCP servers (8): github, cloudflare, supabase, context7, twelve-data (active), sentry, deepwiki, wolfram (active).
+§
+Wed backups: hermes-backup (8:55 PM), refractor-brain (9:00 PM), Claude-Skills/Hermes-Skills (9:05 PM).
 §
 Gmail cleaned (Aug 2026): inbox zero, 40 filters to labeled folders (auto-read: LinkedIn/Travel/Newsletters/Finance/Banking, Shopping; catch-alls archived; spam trashed).
 §
 Telegram bot live. Bot token & allowed user (1341154056) in .env. Gateway installed as Windows Startup item, running as background process. Hermes reachable from Alec's phone via Telegram — full tool access, voice, files, streaming. Gateway logs at ~/.hermes/logs/gateway.log.
 §
-Weekly IBKR report IN PRODUCTION at C:\Users\Alec\portfolio-reporting (run_weekly.py: Flex Web Service read-only → parse → render → AgentMail from personalreporting@agentmail.to → alecxbt@outlook.com). Cron 'Weekly IBKR Portfolio Report' (307541c58486) Fri 17:00 Eastern auto-fires (follows DST). Acct U26923648. Weekly = IBKR live TWR (perf query 1616495, cached fallback); since-inception dropped (ambiguous). Holdings unrealized $ + %. Capital Movements + exposure pie. Archives to data\reports\.
+Weekly IBKR report IN PROD on GitHub Actions (github.com/alecxbt/portfolio-reporting) Fri 17:00 Eastern (runs 24/7 independently in cloud) via AgentMail to alecxbt@outlook.com. Acct U26923648. Live TWR, holdings unrealized $, exposure pie.
