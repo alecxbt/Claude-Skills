@@ -72,7 +72,16 @@ Use `users().settings().filters().create()`. Each filter has:
 - `action.addLabelIds` — labels to apply
 - `action.removeLabelIds` — labels to remove (e.g. `["INBOX", "UNREAD"]` to skip inbox and mark read)
 
-### 5. Archive old Primary emails
+### 5. Automated Unsubscription (List-Unsubscribe Extraction)
+
+For active marketing buildup where users want to permanently stop incoming newsletters/promos:
+1. Scan recent inbox messages for `List-Unsubscribe` and `List-Unsubscribe-Post` headers.
+2. Extract HTTP/HTTPS unsubscribe URLs and execute web requests (`urllib.request` with browser User-Agent headers).
+3. Extract `mailto:` fallback addresses if HTTP links are unavailable.
+4. Move matching marketing emails to `TRASH`.
+5. Group sender domains into blanket `from:(domain1.com OR domain2.com)` auto-trash filter rules so future emails from these lists never reach the inbox.
+
+### 6. Archive old Primary emails
 
 After trashing categories, the Primary inbox may still contain hundreds of old, no-longer-actionable emails (job applications, old work correspondence, service notifications). Archive everything older than a threshold (typically 30 days) to achieve true inbox zero:
 
@@ -110,3 +119,4 @@ service.users().settings().filters().list(userId="me").execute()
 - **Duplicate filters**: No built-in dedup. Check existing filters with `.list()` before creating.
 - **`setup.py --auth-url` flag limitations**: The setup script may not accept `--services` or `--format json` flags — it only takes `--auth-url` alone. If you need to pass custom scopes, edit the SCOPES list in `setup.py` directly before running `--auth-url`.
 - **Existing filters may auto-apply to old emails**: After creating filters that match sender domains, Gmail may immediately apply them to existing emails in the inbox, removing them from inbox before you get a chance to manually trash them. This is normal — check inbox again after filter creation to see what remains.
+- **`List-Unsubscribe` header variation and rate limits**: Newsletters often use `mailto:` URIs alongside HTTPS one-click endpoints, or return HTTP 405 if a POST is required instead of GET. Always handle both GET/POST methods gracefully and respect Google API rate limits (`Units per minute per user` on message batch reads) by batching or pacing message metadata fetches.

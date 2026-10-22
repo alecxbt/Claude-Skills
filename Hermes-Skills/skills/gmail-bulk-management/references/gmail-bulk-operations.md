@@ -116,6 +116,33 @@ queries = {
 }
 ```
 
+## Automated Unsubscription Pattern
+
+Extract `List-Unsubscribe` headers from message metadata and trigger HTTP unsubscription endpoints:
+
+```python
+import re, urllib.request
+
+def parse_and_unsubscribe(msg_payload_headers):
+    headers = {h["name"].lower(): h["value"] for h in msg_payload_headers}
+    unsub = headers.get("list-unsubscribe", "")
+    if not unsub:
+        return False
+    # Extract HTTPS links
+    urls = re.findall(r'<(https?://[^>]+)>', unsub)
+    for url in urls:
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                return resp.status in (200, 202, 204)
+        except Exception:
+            continue
+    return False
+```
+
 ## Filter Creation
 
 ```python
